@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Bot Example</title>
+    <script>
+      // Define a function to handle the user's input and generate the chat bot's response
+      function processInput() {
+        // Get the user's input from the text input field
+        var userInput = document.getElementById("user-input").value;
+
+        // Select the chat container element and create a new chat message element
+        var chatContainer = document.getElementById("chat-container");
+        var newMessage = document.createElement("div");
+
+        // Set the class of the new message element to "chat-message bot" to indicate that it's a chat bot response
+        newMessage.className = "chat-message bot";
+
+        // Generate a response based on the user's input
+        var response;
+        if (userInput.toLowerCase().includes("hello") || userInput.toLowerCase().includes("hi")) {
+          response = "Hello! How can I assist you today?";
+        } else if (userInput.toLowerCase().includes("weather")) {
+          response = "The weather forecast for today is mostly sunny with a high of 80°F.";
+        } else if (userInput.toLowerCase().includes("how are you")) {
+          response = "im fine,thank you. how are you";
+        } else if (userInput.toLowerCase().includes("what is the successor of 4")) {
+          response = "5";
+        } else {
+          response = "I'm sorry, I don't understand. Can you please rephrase your question?";
+        }
+
+        // Set the content of the new message element to the chat bot's response
+        newMessage.textContent = "Chat Bot: " + response;
+
+        // Add the new message element to the chat container element
+        chatContainer.appendChild(newMessage);
+
+        // Clear the text input field
+        document.getElementById("user-input").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chat-container">
+      <div class="chat-message bot">Chat Bot: Hello! How can I assist you today?</div>
+    </div>
+    <div>
+      <input type="text" id="user-input" placeholder="Type your question here...">
+      <button onclick="processInput()">Ask</button>
+      <a href="C:\Users\tadik\OneDrive\Desktop\AI PROJECT\thank you .html">Submit</a>
+    </div>
+  </body>
+</html>
